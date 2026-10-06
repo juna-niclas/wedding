@@ -10,6 +10,7 @@ html {
 
 body {
   min-height: 100vh;
+
   background: #000;
   color: #fff;
 
@@ -377,6 +378,48 @@ body {
 
 
 /* ========================= */
+/* GÄSTE-BEGRÜSSUNG          */
+/* ========================= */
+
+.guest-greeting {
+  min-height: 20px;
+
+  margin-bottom: 26px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    0.82rem;
+
+  letter-spacing:
+    0.20em;
+
+  text-transform:
+    uppercase;
+
+  opacity: 0;
+
+  transform:
+    translateY(20px);
+}
+
+
+.guest-greeting.visible {
+  animation:
+    fadeUp
+    2.2s
+    ease
+    forwards;
+
+  animation-delay:
+    0.1s;
+}
+
+
+/* ========================= */
 /* SAVE THE DATE             */
 /* ========================= */
 
@@ -421,8 +464,7 @@ h1 {
 /* ========================= */
 
 .date {
-  margin-top:
-    34px;
+  margin-top: 34px;
 
   font-size:
     clamp(
@@ -455,8 +497,7 @@ h1 {
 /* ========================= */
 
 .place {
-  margin-top:
-    16px;
+  margin-top: 16px;
 
   font-size:
     clamp(
@@ -465,8 +506,7 @@ h1 {
       1.8rem
     );
 
-  text-transform:
-    uppercase;
+  text-transform: uppercase;
 
   letter-spacing:
     0.30em;
@@ -492,11 +532,9 @@ h1 {
 /* ========================= */
 
 .divider {
-  width:
-    130px;
+  width: 130px;
 
-  height:
-    1px;
+  height: 1px;
 
   margin:
     42px auto
@@ -510,8 +548,7 @@ h1 {
       0.7
     );
 
-  opacity:
-    0;
+  opacity: 0;
 
   transform:
     scaleX(0);
@@ -532,11 +569,9 @@ h1 {
 /* ========================= */
 
 .announcement {
-  max-width:
-    650px;
+  max-width: 650px;
 
-  margin:
-    0 auto;
+  margin: 0 auto;
 
   font-size:
     clamp(
@@ -545,17 +580,14 @@ h1 {
       1.4rem
     );
 
-  line-height:
-    1.7;
+  line-height: 1.7;
 
-  font-style:
-    italic;
+  font-style: italic;
 
   letter-spacing:
     0.03em;
 
-  opacity:
-    0;
+  opacity: 0;
 
   transform:
     translateY(25px);
@@ -576,8 +608,7 @@ h1 {
 /* ========================= */
 
 .photo-wrapper {
-  position:
-    relative;
+  position: relative;
 
   width:
     min(
@@ -589,8 +620,7 @@ h1 {
     60px auto
     0;
 
-  opacity:
-    0;
+  opacity: 0;
 
   transform:
     translateY(40px)
@@ -607,20 +637,14 @@ h1 {
 }
 
 
-/* subtiler Glow */
-
 .photo-wrapper::before {
-  content:
-    "";
+  content: "";
 
-  position:
-    absolute;
+  position: absolute;
 
-  inset:
-    -20px;
+  inset: -20px;
 
-  border-radius:
-    30px;
+  border-radius: 30px;
 
   background:
     radial-gradient(
@@ -638,37 +662,26 @@ h1 {
   filter:
     blur(10px);
 
-  opacity:
-    0.8;
+  opacity: 0.8;
 
-  pointer-events:
-    none;
+  pointer-events: none;
 }
 
 
-/* Foto */
-
 .couple-photo {
-  position:
-    relative;
+  position: relative;
 
-  z-index:
-    2;
+  z-index: 2;
 
-  display:
-    block;
+  display: block;
 
-  width:
-    100%;
+  width: 100%;
 
-  max-height:
-    650px;
+  max-height: 650px;
 
-  object-fit:
-    cover;
+  object-fit: cover;
 
-  border-radius:
-    20px;
+  border-radius: 20px;
 
   border:
     1px solid
@@ -709,23 +722,17 @@ h1 {
 @keyframes fadeUp {
 
   from {
-    opacity:
-      0;
+    opacity: 0;
 
     transform:
-      translateY(
-        35px
-      );
+      translateY(35px);
   }
 
   to {
-    opacity:
-      1;
+    opacity: 1;
 
     transform:
-      translateY(
-        0
-      );
+      translateY(0);
   }
 
 }
@@ -734,23 +741,17 @@ h1 {
 @keyframes revealLine {
 
   from {
-    opacity:
-      0;
+    opacity: 0;
 
     transform:
-      scaleX(
-        0
-      );
+      scaleX(0);
   }
 
   to {
-    opacity:
-      1;
+    opacity: 1;
 
     transform:
-      scaleX(
-        1
-      );
+      scaleX(1);
   }
 
 }
@@ -759,29 +760,19 @@ h1 {
 @keyframes photoReveal {
 
   from {
-    opacity:
-      0;
+    opacity: 0;
 
     transform:
-      translateY(
-        40px
-      )
-      scale(
-        0.96
-      );
+      translateY(40px)
+      scale(0.96);
   }
 
   to {
-    opacity:
-      1;
+    opacity: 1;
 
     transform:
-      translateY(
-        0
-      )
-      scale(
-        1
-      );
+      translateY(0)
+      scale(1);
   }
 
 }
@@ -792,18 +783,15 @@ h1 {
 @keyframes twinkleSmall {
 
   0% {
-    opacity:
-      0.35;
+    opacity: 0.35;
   }
 
   50% {
-    opacity:
-      0.9;
+    opacity: 0.9;
   }
 
   100% {
-    opacity:
-      0.35;
+    opacity: 0.35;
   }
 
 }
@@ -814,23 +802,19 @@ h1 {
 @keyframes twinkleMedium {
 
   0% {
-    opacity:
-      0.25;
+    opacity: 0.25;
   }
 
   35% {
-    opacity:
-      0.75;
+    opacity: 0.75;
   }
 
   70% {
-    opacity:
-      0.4;
+    opacity: 0.4;
   }
 
   100% {
-    opacity:
-      0.25;
+    opacity: 0.25;
   }
 
 }
@@ -841,8 +825,7 @@ h1 {
 @keyframes twinkleLarge {
 
   0% {
-    opacity:
-      0.25;
+    opacity: 0.25;
 
     filter:
       drop-shadow(
@@ -852,8 +835,7 @@ h1 {
   }
 
   50% {
-    opacity:
-      0.9;
+    opacity: 0.9;
 
     filter:
       drop-shadow(
@@ -863,8 +845,7 @@ h1 {
   }
 
   100% {
-    opacity:
-      0.25;
+    opacity: 0.25;
 
     filter:
       drop-shadow(
@@ -880,14 +861,22 @@ h1 {
 /* HANDY                     */
 /* ========================= */
 
-@media (
-  max-width: 600px
-) {
+@media (max-width: 600px) {
 
   .hero {
     padding:
       65px 20px
       80px;
+  }
+
+  .guest-greeting {
+    font-size: 0.72rem;
+
+    letter-spacing:
+      0.16em;
+
+    margin-bottom:
+      22px;
   }
 
   h1 {
