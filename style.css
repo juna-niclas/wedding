@@ -4,117 +4,550 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  min-height: 100vh;
   background: #000;
   color: #fff;
   font-family: Georgia, "Times New Roman", serif;
-  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .hero {
+  position: relative;
+
   min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+
+  padding: 70px 20px 90px;
+
   text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255,255,255,0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 50% 70%,
+      rgba(255,255,255,0.03),
+      transparent 45%
+    ),
+    #000;
 }
+
+/* -------------------- */
+/* STERNENHIMMEL        */
+/* -------------------- */
+
+.stars,
+.stars-two {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+.stars::before,
+.stars::after,
+.stars-two::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.stars::before {
+  background-image:
+
+    radial-gradient(
+      1.5px 1.5px at 10% 15%,
+      white,
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 22% 38%,
+      white,
+      transparent
+    ),
+
+    radial-gradient(
+      2px 2px at 32% 12%,
+      white,
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 45% 26%,
+      white,
+      transparent
+    ),
+
+    radial-gradient(
+      1.5px 1.5px at 58% 8%,
+      white,
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 69% 31%,
+      white,
+      transparent
+    ),
+
+    radial-gradient(
+      2px 2px at 79% 17%,
+      white,
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 91% 42%,
+      white,
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 17% 63%,
+      white,
+      transparent
+    ),
+
+    radial-gradient(
+      1.5px 1.5px at 38% 76%,
+      white,
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 61% 67%,
+      white,
+      transparent
+    ),
+
+    radial-gradient(
+      1.5px 1.5px at 82% 79%,
+      white,
+      transparent
+    );
+
+  opacity: 0.65;
+
+  animation: twinkle 6s ease-in-out infinite;
+}
+
+.stars::after {
+  background-image:
+
+    radial-gradient(
+      1px 1px at 14% 28%,
+      rgba(255,255,255,0.8),
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 28% 54%,
+      rgba(255,255,255,0.8),
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 52% 44%,
+      rgba(255,255,255,0.8),
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 71% 57%,
+      rgba(255,255,255,0.8),
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 87% 24%,
+      rgba(255,255,255,0.8),
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 94% 70%,
+      rgba(255,255,255,0.8),
+      transparent
+    );
+
+  opacity: 0.4;
+
+  animation: twinkle 9s ease-in-out infinite reverse;
+}
+
+.stars-two::before {
+  background-image:
+
+    radial-gradient(
+      1px 1px at 7% 82%,
+      rgba(255,255,255,0.65),
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 25% 91%,
+      rgba(255,255,255,0.65),
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 48% 86%,
+      rgba(255,255,255,0.65),
+      transparent
+    ),
+
+    radial-gradient(
+      1px 1px at 73% 93%,
+      rgba(255,255,255,0.65),
+      transparent
+    );
+
+  opacity: 0.4;
+
+  animation: drift 12s ease-in-out infinite;
+}
+
+/* -------------------- */
+/* INHALT               */
+/* -------------------- */
 
 .content {
+  position: relative;
+
+  z-index: 2;
+
   width: 100%;
   max-width: 900px;
-  animation: fadeIn 1.8s ease forwards;
 }
 
-.eyebrow {
-  font-size: 0.95rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  opacity: 0;
-  animation: fadeUp 1.2s ease forwards;
-  animation-delay: 0.2s;
-}
+/* SAVE THE DATE */
 
 h1 {
-  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-size: clamp(2.7rem, 8vw, 6rem);
+
   font-weight: 400;
+
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-top: 20px;
+
+  letter-spacing: 0.17em;
+
+  line-height: 1.1;
+
   opacity: 0;
-  animation: fadeUp 1.2s ease forwards;
-  animation-delay: 0.7s;
+
+  transform: translateY(25px);
+
+  animation: fadeUp 1.3s ease forwards;
+
+  animation-delay: 0.3s;
+
+  text-shadow:
+    0 0 20px rgba(255,255,255,0.13);
 }
+
+/* DATUM */
 
 .date {
-  font-size: clamp(1.5rem, 4vw, 2.4rem);
-  margin-top: 28px;
-  letter-spacing: 0.2em;
+  margin-top: 32px;
+
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+
+  letter-spacing: 0.22em;
+
   opacity: 0;
+
+  transform: translateY(20px);
+
   animation: fadeUp 1.2s ease forwards;
-  animation-delay: 1.2s;
+
+  animation-delay: 1s;
 }
+
+/* ESTONIA */
 
 .place {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  margin-top: 14px;
-  letter-spacing: 0.18em;
+  margin-top: 15px;
+
+  font-size: clamp(1.15rem, 3vw, 1.75rem);
+
   text-transform: uppercase;
-  opacity: 0.85;
+
+  letter-spacing: 0.3em;
+
   opacity: 0;
+
+  transform: translateY(20px);
+
   animation: fadeUp 1.2s ease forwards;
-  animation-delay: 1.6s;
+
+  animation-delay: 1.5s;
 }
 
+/* TRENNLINIE */
+
 .divider {
-  width: 120px;
+  width: 130px;
+
   height: 1px;
-  background: rgba(255, 255, 255, 0.6);
-  margin: 36px auto 28px;
+
+  margin: 40px auto 30px;
+
+  background:
+    rgba(255,255,255,0.65);
+
   opacity: 0;
-  animation: fadeIn 1.2s ease forwards;
+
+  animation: fadeIn 1.4s ease forwards;
+
   animation-delay: 2s;
 }
 
-.subtitle {
-  font-size: 1rem;
+/* TEXT */
+
+.announcement {
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
+
+  line-height: 1.7;
+
+  font-style: italic;
+
   opacity: 0;
-  animation: fadeIn 1.2s ease forwards;
+
+  animation: fadeIn 1.4s ease forwards;
+
   animation-delay: 2.4s;
 }
 
-.photo-wrapper {
-  margin-top: 42px;
+.coming {
+  margin-top: 14px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.78rem;
+
+  letter-spacing: 0.32em;
+
+  text-transform: uppercase;
+
   opacity: 0;
-  animation: fadeIn 1.6s ease forwards;
-  animation-delay: 3s;
+
+  animation: fadeIn 1.4s ease forwards;
+
+  animation-delay: 2.9s;
+}
+
+/* -------------------- */
+/* FOTO                 */
+/* -------------------- */
+
+.photo-wrapper {
+  position: relative;
+
+  width: min(100%, 520px);
+
+  margin: 55px auto 0;
+
+  opacity: 0;
+
+  transform:
+    translateY(30px)
+    scale(0.97);
+
+  animation:
+    photoReveal 1.8s ease forwards;
+
+  animation-delay: 3.4s;
+}
+
+.photo-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -1px;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 0 70px rgba(255,255,255,0.07);
+
+  pointer-events: none;
 }
 
 .couple-photo {
-  width: min(100%, 420px);
-  border-radius: 18px;
   display: block;
-  margin: 0 auto;
-  box-shadow: 0 20px 50px rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  width: 100%;
+
+  max-height: 650px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.18);
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.75);
+
+  filter:
+    contrast(1.03)
+    brightness(0.92);
 }
 
+/* -------------------- */
+/* ANIMATIONEN          */
+/* -------------------- */
+
 @keyframes fadeUp {
+
   from {
     opacity: 0;
-    transform: translateY(24px);
+
+    transform:
+      translateY(25px);
   }
+
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
   }
+
 }
 
 @keyframes fadeIn {
+
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
+
+}
+
+@keyframes photoReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+@keyframes twinkle {
+
+  0% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0.35;
+  }
+
+}
+
+@keyframes drift {
+
+  0% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(10px);
+  }
+
+  100% {
+    transform:
+      translateY(0);
+  }
+
+}
+
+/* -------------------- */
+/* HANDY                */
+/* -------------------- */
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding:
+      55px 20px
+      70px;
+  }
+
+  h1 {
+    letter-spacing:
+      0.11em;
+  }
+
+  .date {
+    letter-spacing:
+      0.15em;
+  }
+
+  .place {
+    letter-spacing:
+      0.22em;
+  }
+
+  .photo-wrapper {
+    margin-top:
+      45px;
+  }
+
 }
