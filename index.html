@@ -20,6 +20,9 @@
 
     <div class="content">
 
+      <!-- Persönliche Begrüßung -->
+      <p id="guestGreeting" class="guest-greeting"></p>
+
       <h1>Save the Date</h1>
 
       <p class="date">
@@ -47,6 +50,53 @@
     </div>
 
   </main>
+
+
+  <!-- Personalisierte Einladungen -->
+  <script>
+
+    const guests = {
+
+      "A7K2MX": "Anna & Max",
+
+      "B4P8QZ": "Lisa & Tom",
+
+      "C9R3LW": "Family Müller"
+
+    };
+
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+
+    const inviteCode =
+      params.get("invite");
+
+
+    const greeting =
+      document.getElementById(
+        "guestGreeting"
+      );
+
+
+    if (
+      inviteCode &&
+      guests[inviteCode]
+    ) {
+
+      greeting.textContent =
+        `Welcome, ${guests[inviteCode]}`;
+
+      greeting.classList.add(
+        "visible"
+      );
+
+    }
+
+  </script>
 
 </body>
 </html>
